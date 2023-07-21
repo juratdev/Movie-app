@@ -5,7 +5,10 @@
 </script>
 
 <template>
-  <h1 class="text-2xl font-bold">App Info</h1>
+  <div class="p-6 rounded shadow-xl bg-orange-50">
+    <p class="pb-3 text-2xl uppercase">Number of all movies: 0</p>
+    <p class="text-xl uppercase ">Number of movies watched: 0</p>
+  </div>
 </template>
 
 <style scoped>

@@ -16,8 +16,8 @@
 </script>
 
 <template>
-  <div class="h-screen text-black">
-    <div class="w-[62.5rem] min-[43.75rem] bg-white mt-10 m-auto py-20">
+  <div class="h-screen font-mono text-black">
+    <div class="w-[62.5rem] min-[43.75rem] bg-white m-auto py-16">
       <AppInfo />
       <div class="p-6 mt-8 rounded shadow-xl bg-orange-50">
         <SearchPanel />

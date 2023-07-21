@@ -1,11 +1,18 @@
 <script>
+import MovieListItem from '../movie-list-item/MovieListItem.vue'
   export default {
-
+    components: {
+      MovieListItem
+    }
   }
 </script>
 
 <template>
-  <h1 class="text-2xl font-bold">Movie List</h1>
+<ul class="p-6 mt-8 list-disc list-inside rounded shadow-xl bg-orange-50" role="list">
+  <MovieListItem />
+  <MovieListItem />
+  <MovieListItem />
+</ul>
 </template>
 
 <style scoped>
