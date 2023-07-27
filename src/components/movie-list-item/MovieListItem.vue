@@ -17,11 +17,11 @@
     <input type="number" class="w-48 text-2xl text-center border-0 outline-none list-group-item-input" v-bind:value="movie.viewers">
 
     <div class="flex items-center justify-center">
-      <button type="button" class="ml-2 text-lg text-orange-400 cursor-pointer w-9 h-9">
+      <button type="button" class="ml-2 mr-2 text-lg text-orange-400 bg-gray-100 cursor-pointer w-9 h-9">
         <i class="fas fa-cookie"></i>
       </button>
 
-      <button type="button" class="text-lg text-red-600 cursor-pointer w-9 h-9">
+      <button type="button" class="text-lg text-red-600 bg-gray-100 cursor-pointer w-9 h-9">
         <i class="fas fa-trash"></i>
       </button>
       

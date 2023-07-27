@@ -4,30 +4,12 @@ import MovieListItem from '../movie-list-item/MovieListItem.vue'
     components: {
       MovieListItem
     },
-    data() {
-      return {
-        movies: [
-          {
-            name: "Omar",
-            viewers: 811,
-            favorite: false,
-            like: true,
-          },
-          {
-            name: "Empire of osman",
-            viewers: 415,
-            favorite: false,
-            like: false,
-          },
-          {
-            name: "Ertugrul",
-            viewers: 708,
-            favorite: true,
-            like: false,
-          },
-        ]
+    props: {
+      movies: {
+        type: Array,
+        required: true,
       }
-    },
+    }
   }
 </script>
 
