@@ -13,8 +13,11 @@
           viewers: this.viewers,
           favorite: false,
           like: false,
+          id: Date.now(),
         }
-        console.log(newMovie);
+        this.$emit("createMovie", newMovie)
+        this.name = ""
+        this.viewers = ""
       }
     }
    

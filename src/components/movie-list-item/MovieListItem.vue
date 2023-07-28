@@ -5,6 +5,11 @@
         type: Object,
         required: true,
       }
+    },
+    methods: {
+      onLike() {
+        this.$emit("onLike", this.movie.id)
+      }
     }
   }
 </script>
@@ -13,11 +18,11 @@
   <li class="flex justify-between px-4 py-3 list-none border-b border-gray-500 rounded-t-lg list-group-item "
       :class="[{like: movie.like},{favorite: movie.favorite}]"
   >
-    <span class="text-2xl cursor-pointer w-[34.375rem] list-group-item-label">{{movie.name}}</span>
+    <span @click="$emit('onToggle', {id: movie.id, prop: 'like'})" class="text-2xl cursor-pointer w-[34.375rem] list-group-item-label">{{movie.name}}</span>
     <input type="number" class="w-48 text-2xl text-center border-0 outline-none list-group-item-input" v-bind:value="movie.viewers">
 
     <div class="flex items-center justify-center">
-      <button type="button" class="ml-2 mr-2 text-lg text-orange-400 bg-gray-100 cursor-pointer w-9 h-9">
+      <button @click="$emit('onToggle', {id: movie.id, prop: 'favorite'})" type="button" class="ml-2 mr-2 text-lg text-orange-400 bg-gray-100 cursor-pointer w-9 h-9">
         <i class="fas fa-cookie"></i>
       </button>
 
