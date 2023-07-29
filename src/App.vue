@@ -36,7 +36,9 @@ data() {
         like: false,
         id: 3,
       },
-    ]
+    ],
+    term: "",
+    filter: "all",
   }
 },
 methods: {
@@ -52,6 +54,34 @@ methods: {
       return item
     })
   },
+  onRemoveHandler(id) {
+    this.movies = this.movies.filter(c => c.id != id)
+  },
+  onSearchHandler(arr, term) {
+    if(term.length == 0) {
+      return arr
+    }
+    return arr.filter(c => c.name.toLowerCase().indexOf(term) > -1)
+  },
+  onFilterHandler(arr, filter) {
+    switch (filter) {
+      case "popular":
+        return arr.filter(c => c.like)
+        break;
+      case "mostViewers":
+        return arr.filter(c => c.viewers > 500)
+        break;
+      default:
+        return arr
+        break;
+    }
+  },
+  updateTermHandler(term) {
+    this.term = term
+  },
+  updateFilterHandler(filter) {
+    this.filter = filter
+  }
 
 },
 
@@ -63,10 +93,10 @@ methods: {
     <div class="w-[62.5rem] min-[43.75rem] bg-white m-auto py-16">
       <AppInfo :allMoviesCount="movies.length" :favoriteMoviesCount="movies.filter(c => c.favorite).length" />
       <div class="p-6 mt-8 rounded shadow-xl bg-orange-50">
-        <SearchPanel />
-        <AppFilter />
+        <SearchPanel :updateTermHandler="updateTermHandler"/>
+        <AppFilter :updateFilterHandler="updateFilterHandler" :filterName="filter"/>
       </div>
-      <MovieList :movies="movies" @onToggle="onToggleHandler" />
+      <MovieList :movies="onFilterHandler(onSearchHandler(movies, term), filter)" @onToggle="onToggleHandler" @onRemove="onRemoveHandler" />
       <MovieAddForm @createMovie="createMovie" />
     </div>
   </div>

@@ -23,10 +23,10 @@
 
     <div class="flex items-center justify-center">
       <button @click="$emit('onToggle', {id: movie.id, prop: 'favorite'})" type="button" class="ml-2 mr-2 text-lg text-orange-400 bg-gray-100 cursor-pointer w-9 h-9">
-        <i class="fas fa-cookie"></i>
+        <i class="fa-solid fa-eye"></i>
       </button>
 
-      <button type="button" class="text-lg text-red-600 bg-gray-100 cursor-pointer w-9 h-9">
+      <button @click="$emit('onRemove', movie.id)" type="button" class="text-lg text-red-600 bg-gray-100 cursor-pointer w-9 h-9">
         <i class="fas fa-trash"></i>
       </button>
       
