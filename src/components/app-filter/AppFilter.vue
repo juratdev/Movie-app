@@ -16,14 +16,17 @@
           {
             title: 'All movies',
             name: 'all',
+            border: 'rounded-l-md',
           },
           {
             title: 'Popular movies',
-            name: 'all',
+            name: 'popular',
+            border: 'rounded-none',
           },
           {
             title: 'Most viewed movies',
-            name: 'all',
+            name: 'mostViewers',
+            border: 'rounded-r-md',
           },
         ],
 
@@ -42,27 +45,18 @@
 
 <template>
   
-<div class="inline-flex mt-4 rounded-md shadow-sm" role="group">
-  <button 
-    @click="filterHandler('all')"
-    :class="[filterName === 'all' ? 'bg-zinc-900 text-white focus:bg-zinc-900' : 'text-zinc-950']" 
-    type="button"
-    class="px-3 py-2 text-base font-medium transition duration-300 ease-in-out border border-zinc-900 hover:bg-zinc-950 hover:text-white rounded-l-md ">
-    All movies
-  </button>
+<div class="mt-4 rounded-md shadow-sm" role="group">
   <button
-   @click="filterHandler('popular')" 
-   :class="[filterName === 'popular' ? 'bg-zinc-900 text-white focus:bg-zinc-900' : 'bg-white, text-zinc-950']" 
-   type="button" 
-   class="px-3 py-2 text-base font-medium transition duration-300 ease-in-out border border-zinc-900 hover:bg-zinc-950 hover:text-white ">
-    Popular movies
+    v-for="btn in filterButton"
+    :key="btn.name" 
+    @click="filterHandler(btn.name)"
+    :class="[filterName === btn.name ? 'bg-zinc-900 text-white focus:bg-zinc-900' : 'bg-white, text-zinc-950']
+    [btn.border]"
+    class="px-3 py-2 text-base font-medium transition duration-300 ease-in-out border border-zinc-900 hover:bg-zinc-950 hover:text-white ">
+    
+    {{ btn.title }}
   </button>
-  <button @click="filterHandler('mostViewers')"
-  :class="[filterName === 'mostViewers' ? 'bg-zinc-900 text-white focus:bg-zinc-900' : 'bg-white, text-zinc-950']" 
-   type="button" 
-   class="px-3 py-2 text-base font-medium transition duration-300 ease-in-out border border-zinc-900 rounded-r-md hover:bg-zinc-950 hover:text-white">
-    Most viewed movies
-  </button>
+ 
 </div>
 
 </template>
