@@ -14,9 +14,9 @@ import MovieListItem from '../movie-list-item/MovieListItem.vue'
 </script>
 
 <template>
-<ul class="p-6 mt-8 list-disc list-inside rounded shadow-xl bg-orange-50 " role="list">
+<Box class="mt-8">
   <MovieListItem v-for="movie in movies" v-bind:movie="movie" :key="movie.id" @onLike="$emit('onLike', movie.id)" @onToggle="$emit('onToggle', $event)" @onRemove="$emit('onRemove', $event)" />
-</ul>
+</Box>
 </template>
 
 <style scoped>
