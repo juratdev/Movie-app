@@ -15,8 +15,9 @@
 </script>
 
 <template>
-  <li class="flex justify-between px-4 py-3 list-none border-b border-gray-500 rounded-t-lg list-group-item "
-      :class="[{like: movie.like},{favorite: movie.favorite}]"
+  <li
+   class="flex justify-between px-4 py-3 list-none border-b border-gray-500 rounded-t-lg list-group-item "
+    :class="[{like: movie.like},{favorite: movie.favorite}]"
   >
     <span @click="$emit('onToggle', {id: movie.id, prop: 'like'})" class="text-2xl cursor-pointer w-[34.375rem] list-group-item-label">{{movie.name}}</span>
     <input type="number" class="w-48 text-2xl text-center border-0 outline-none list-group-item-input" v-bind:value="movie.viewers">

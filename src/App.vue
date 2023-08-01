@@ -16,21 +16,21 @@ data() {
   return {
     movies: [
       {
-        name: "Omar",
+        name: "Spider-Man",
         viewers: 811,
         favorite: false,
         like: true,
         id: 1,
       },
       {
-        name: "Empire of osman",
+        name: "Terminator",
         viewers: 415,
         favorite: false,
         like: false,
         id: 2,
       },
       {
-        name: "Ertugrul",
+        name: "Sherlock Jr",
         viewers: 708,
         favorite: true,
         like: false,
